@@ -1,14 +1,14 @@
-// One tag 
+//? One tag 
 const heading = React.createElement(
   "h1", // tag
   { id: "heading" }, // attribute
   "Hello World from React using CDN Links!" // content
 );
 
-// React element at the end the day is an object.
+//? React element at the end the day is an object.
 console.log("heading", heading);
 
-// Nested tags
+//? Nested tags
 const parent = React.createElement(
   "div",
   { id: "parent" },
@@ -23,12 +23,12 @@ const parent = React.createElement(
   ]
 );
 
-// Define root
+//? Define root
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// Render to root
+//? Render to root
 root.render(heading);
 // root.render(parent);
 
-// 1. React.createElement => React Element (Js-Object) => HTML Element (Browsers understand)
-// 2. props are children + attributes
+//! 1. React.createElement => React Element (Js-Object) => HTML Element (Browsers understand)
+//! 2. props are children + attributes

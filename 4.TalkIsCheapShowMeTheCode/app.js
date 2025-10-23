@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Logo from "./logo.jpg";
 
-//? Haeder Component
+//? Header Component
 const Header = () => {
   return (
     <div className="header">
@@ -28,10 +28,10 @@ const styleCard = {
 
 // ? Restraurant Component
 const RestaurantCard = (props) => {
-  // Destructuring on the fly
+  //* Destructuring on the fly
   // const RestaurantCard = ({resName, cusinies}) => {
 
-  // Simple destructuring
+  //* Simple destructuring
   // const {resName, cusinies} = props
 
   const { resData } = props;
@@ -1980,7 +1980,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<AppLayout />);
 
-// Config Driven UI - UI driven by data.
-// Eg: Suppose there is an offer on swiggy for bangalore and some other offer for kolkata.
-// If we do not use the "key" with unique value so incase of a new data, React wont know what data are old and what data is new, so it will render all the data while re-rendering.. But we give the key, so react will render only new data while re-rendering.
-// Using index as keys is a bad practise, it is not recommened by React to use index.
+//* Config Driven UI - UI driven by data.
+//* Eg: Suppose there is an offer on swiggy for bangalore and some other offer for kolkata.
+//* If we do not use the "key" with unique value so incase of a new data, React wont know what data are old and what data is new, so it will render all the data while re-rendering. But we give the key, so react will render only new data while re-rendering.
+//* Using index as keys is a bad practise, it is not recommened by React to use index.

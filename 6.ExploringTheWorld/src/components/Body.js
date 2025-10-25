@@ -26,14 +26,15 @@ const Body = () => {
 
   //? The two parameter in useEffect are first one is a callback function and a dependency array. The callback function is called after the component is rendered.
   useEffect(() => {
-    /*This callback function is called after the component renders*/
+    //* This callback function is called after the component renders */
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/https://swiggy-api-4c740.web.app/swiggy-api.json"
     );
+    // "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     // https://corsproxy.io/? This can also be used to bypass CORS error
     const json = await data.json();
     // console.log("JSON", json);
@@ -52,7 +53,7 @@ const Body = () => {
 
   //? Conditional Rendering: Rendering on the basis of condition.
   if (listOfRestaurants.length === 0) {
-    // ! Using Loader/Spinner is not a good UX
+    // ! Using Loader/Spinner is not a good UX use Shimmer UI instead
     // return <h1>Loading... </h1>;
     return <Shimmer />;
   }
@@ -69,7 +70,7 @@ const Body = () => {
             className="search-box"
             placeholder="Search Restaurant..."
             value={searchText}
-            /*The value of value (i.e., searchText) is not getting changed it is still "", that we initially defined. So any change is not going to work inside Component without using useState so we are using it here to set the value as current value (whatever we type in search bar).*/
+            //* The value of value (i.e., searchText) is not getting changed it is still "", that we initially defined. So any change is not going to work inside Component without using onChange and then to display on UI need to use useState so we are using it here to set the value as current value (whatever we type in search bar).*/
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
@@ -78,7 +79,7 @@ const Body = () => {
             onClick={() => {
               // console.log("Search Text", searchText);
               // setListOfRestaurants(searchRestaurants);
-              // To get rid of a bug where if we search twice without refreshing we get empty, we need to maintain a seperate state and render from them, so above setListOfRestaurants(filteredRestaurant) won't work. Also need to change listOfRestaurants to filteredRestaurant while returning JSX.
+              //* To get rid of a bug where if we search twice without refreshing we get empty, we need to maintain a seperate state and render from them, so above setListOfRestaurants(filteredRestaurant) won't work. Also need to change listOfRestaurants to filteredRestaurant while returning JSX.
               setFilteredRestaurant(searchRestaurants);
             }}
           >
@@ -113,8 +114,8 @@ const Body = () => {
 
 export default Body;
 
-// Two ways of api call and render
-// 1. Loads --> api call --> render
-// 2. Loads --> render (the skeleton) --> api call --> re-render. This approach is always better as it gives better UX.
+//* Two ways of api call and render
+//* 1. Loads --> api call --> render
+//* 2. Loads --> render (the skeleton) --> api call --> re-render. This approach is always better as it gives better UX.
 
-//? Whenever state variables updates. react triggers a reconciliation cycle(re-renders the whole component) but only updates the local state (by finding diffrence between older Virtual DOM and newer Virtual DOM) and re-renders the component.
+//? Whenever state variables updates, react triggers a reconciliation cycle(re-renders the whole component) but only updates the local state (by finding diffrence between older Virtual DOM and newer Virtual DOM) and re-renders the component.

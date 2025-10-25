@@ -48,11 +48,10 @@ export const Header = () => {
 
 export default Header;
 
-// Even incase of changing the state of just the button by using on click, the whole Header component is rendered/re-rendered again.
+//* Even incase of changing the state of just the button by using on click, the whole Header component is rendered/re-rendered again.
 
-// This is the how even if we define useState using const, we are still able to update it's value. The reason is since the whole component is rendered again so this time the btnName is a brand new variable.
+//* This is the how even if we define useState using const, we are still able to update it's value. The reason is since the whole component is rendered again so this time the btnName is a brand new variable.
 
-// Happens because of diff algo -- Reconciliation process.
+//* Happens because of diff algo -- Reconciliation process.
 
 //? Whenever state variables updates. react triggers a reconciliation cycle(re-renders the whole component)
-

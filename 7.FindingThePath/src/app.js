@@ -6,7 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // Ensure to install version 6.22.0 or less else will throw error.
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; //* Ensure to install version 6.22.0 or less else will throw error.
 
 const AppLayout = () => {
   return (

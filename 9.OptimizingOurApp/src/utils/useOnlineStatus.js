@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 const useOnlineStatus = () => {
-  // Update UI
+  //* Update UI
   const [onlineStatus, setOnlineStatus] = useState(true);
 
-  // Check if user is online
+  //* Check if user is online
   useEffect(() => {
     checkStatus();
   }, []);
@@ -19,7 +19,7 @@ const useOnlineStatus = () => {
     });
   };
 
-  // Boolean value
+  //* Boolean value
   return onlineStatus;
 };
 

@@ -1,6 +1,6 @@
 //? If we were creating Swiggy's another verticle like Instamart
 
-// Code chunking
+//* Code chunking
 const Grocery = () =>{
     return (
       <h1>

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { MENU_URL } from "../utils/constants";
 
 //? Creating Custom Hook
-// Taking resId as param because we need resId from the caller i.e., RestuarantMenu.js
+//* Taking resId as param because we need resId from the caller i.e., RestuarantMenu.js
 const useRestaurantMenu = (resId) => {
-  // Update UI
+  //* Update UI
   const [resInfo, setResInfo] = useState(null);
 
-  // Fetch data
+  //* Fetch data
   useEffect(() => {
     fetchMenu();
   }, []);

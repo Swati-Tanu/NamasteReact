@@ -1,18 +1,16 @@
 //? Class Component is a normal JS class which extend React component and has a render method that returns JSX.
-
 //? React.Component is a class that is given to us by React and here UserClass inherits some properties from it.
 import React from "react";
-
 class UserClass extends React.Component {
-  //To receive props we use contructor and super keys.
+  //* To receive props we use constructor and super keys.
   constructor(props) {
     super(props);
     // console.log("Class Props", props);
 
-    // Changing the state in class component
+    //* Changing the state in class component
     this.state = {
       count: 0,
-      log: "Login", // Creating 2nd state, we can do it inside 1 state variable only. No need to create a seperate one.
+      log: "Login", //* Creating 2nd state, we can do it inside 1st state variable only. No need to create a seperate one.
       userInfo: {
         name: "Dummy Name",
         location: "Default Location",
@@ -26,7 +24,7 @@ class UserClass extends React.Component {
   }
 
   async componentDidMount() {
-    // API Call
+    //* API Call
     const data = await fetch("https://api.github.com/users/Swati-Tanu");
     const json = await data?.json();
     console.log(json);
@@ -36,7 +34,7 @@ class UserClass extends React.Component {
     });
   }
 
-  // Here render method returns some piece of JSX
+  //* Here render method returns some piece of JSX
   render() {
     console.log(this.props.name + " Child Render");
     return (
@@ -44,13 +42,13 @@ class UserClass extends React.Component {
         <h1>Class Component</h1>
         <h2>Count = {this.state.count}</h2>
         <button
-          // Updating the state
+          //* Updating the state
           onClick={() => {
-            // Never update state variable directly as below:
+            //* Never update state variable directly as below:
             // this.state.count = this.state.count + 1 (Won't work!!!)
             this.setState({
               count: this.state.count + 1,
-              log: this.state.log === "Login" ? "Logout" : "Login", //To update 2 states we can do it inside 1 setState only. No need to create a seperate one.
+              log: this.state.log === "Login" ? "Logout" : "Login", //* To update 2 states we can do it inside 1 setState only. No need to create a seperate one.
             });
           }}
         >
@@ -68,4 +66,4 @@ class UserClass extends React.Component {
 
 export default UserClass;
 
-// ? Loading a class component means creating an instance of that class.
+//? Loading a class component means creating an instance of that class.

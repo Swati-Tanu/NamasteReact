@@ -10,6 +10,7 @@
 **Problem:**
 It makes code **harder to maintain** and **less scalable**, especially in large applications.
 
+
 **Example:**
 
 ```jsx

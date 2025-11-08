@@ -36,6 +36,7 @@ A small, fast, and scalable state management library built on simple principles.
 
 ---
 
+
 ## 🏦 **Redux Store**
 
 * The **Redux store** is a **large JavaScript object** that holds the entire state of the application in **one central location**.

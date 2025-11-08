@@ -7,6 +7,7 @@
 In React (and modern frontend development), there are **multiple ways** to style components.
 Here’s a complete overview 👇
 
+
 | 🧩 Method                 | 💡 Description                                                        | 🧾 Example                                                                                                        |
 | ------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **1️⃣ External CSS**      | Write CSS in a separate `.css` file and import it.                    | `jsx import "./App.css"; <div className="header">Hello</div> `                                                    |
